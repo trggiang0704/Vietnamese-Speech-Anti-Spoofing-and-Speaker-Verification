@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Dataset và feature
+datasets/
+features/
+*.npy
+
+# Model đã huấn luyện
+*.joblib
+*.pkl
+*.pth
+*.pt
+*.h5
+
+# Kết quả, biểu đồ và báo cáo
+output/
+outputs/
+runs/
+logs/
+reports/
+# File cấu hình nhạy cảm
+.env
+
+# IDE
+.vscode/
+.idea/
