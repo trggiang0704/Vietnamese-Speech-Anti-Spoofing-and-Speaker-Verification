@@ -1,0 +1,30 @@
+# 1. Đường dẫn dữ liệu
+data:
+  processed_dir: "datasets/preprocessing"
+  train_meta: "datasets/preprocessing/train_metadata.csv"
+  val_meta: "datasets/preprocessing/val_metadata.csv"
+  test_meta: "datasets/preprocessing/test_metadata.csv"
+
+# 2. Cấu hình biến đổi Audio -> Log-Mel Spectrogram
+feature_extraction:
+  sample_rate: 16000
+  n_fft: 512
+  win_length: 400     # 25ms (400 samples at 16kHz)
+  hop_length: 160     # 10ms (160 samples at 16kHz)
+  n_mels: 80          # Số dải Mel
+  f_min: 0
+  f_max: 8000
+
+# 3. Cấu hình DataLoader
+dataloader:
+  batch_size: 32      # RTX 1660 Super 6GB chạy tốt batch 32-64 với ResNet18
+  num_workers: 4      # Số luồng CPU tải data
+
+# 4. Cấu hình Huấn luyện
+training:
+  epochs: 20
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  device: "cuda"      # Chạy trên GPU
+  log_interval: 100   # In log sau mỗi 100 batch
+  save_dir: "models/baseline_resnet18"

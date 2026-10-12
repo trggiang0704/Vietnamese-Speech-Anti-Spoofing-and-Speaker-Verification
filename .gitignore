@@ -6,8 +6,6 @@ venv/
 
 # Dataset và feature
 datasets/
-features/
-*.npy
 
 # Model đã huấn luyện
 *.joblib
